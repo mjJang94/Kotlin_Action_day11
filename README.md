@@ -3,7 +3,6 @@
 동반 객체란 클래스 안에 정의된 일반 객체이다.   
 회사의 급여 명부를 제공하는 웹 서비스를 만든다고 가정했을때, 서비스에서 사용하기 위해 객체를 JSON형식으로 직렬화하거나 역직렬화를 해야한다.   
 직렬화 로직을 동반 객체 안에 넣어보자.
-
 <code>
 <pre>
 class Person(val name: String) {
@@ -15,7 +14,6 @@ class Person(val name: String) {
 >>>person = Person.Loader.fromJSON("{name: 'Dimitry'}")
 >>>person.name
 Dimitry
-
 </code>
 </pre>
 
@@ -25,7 +23,6 @@ Dimitry
 
 다른 객체 선언과 마찬가지로 동반 객체도 인터페이스를 구현할 수 있는데, 인터페이스를 구현하는 동반 객체를 참조할 때 객체를 둘러싼 클래스의 이름을 바로 사용할 수 있다.   
 이번에는 모든 객체를 역직렬화를 통해 만들어야 하므로 모든 타입의 객체를 생성하는 일반적인 방법과 JSON을 역직렬화하는 JSONFactory 인터페이스가 존재한다.
-
 <code>
 <pre>
 interface JSONFactory<T> {
